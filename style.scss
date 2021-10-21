@@ -53,6 +53,7 @@ body {
 .card {
   border-radius: 20px;
   overflow: hidden;
+  transition: all 0.2s linear;
   &-image {
     height: 250px;
     object-fit: cover;
@@ -67,6 +68,9 @@ body {
     margin-bottom: 25px;
     cursor: pointer;
   }
+}
+.card:hover {
+  box-shadow: 1px 1px 12px 1px #2980b9;
 }
 .author {
   display: flex;
@@ -125,3 +129,57 @@ body {
     margin-right: 5px;
   }
 }
+@media screen and (max-width: 1279px) {
+  .card {
+    &-image {
+      height: 200px;
+    }
+    &-heading {
+      line-height: 1.2;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    &-info {
+      padding: 20px 15px;
+    }
+  }
+  .view {
+    padding-top: 20px;
+    &-live {
+      margin-right: 5px;
+    }
+    &-circle {
+      margin-right: 2px;
+    }
+  }
+  .author {
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px 30px;
+  }
+  .card {
+    &-image {
+      width: 100%;
+    }
+  }
+  .view {
+    &-live {
+      margin-right: 15px;
+    }
+    &-circle {
+      margin-right: 5px;
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .cards {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
